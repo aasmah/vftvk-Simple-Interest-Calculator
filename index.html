@@ -1,16 +1,50 @@
+<!DOCTYPE html>
 <html>
-    <head>
+<title>"Simple Interest Calculator</title>
+
+<head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+</head>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+<body>
+    <div>
+        <div class="maindiv">
+            <h1>Simple Interest Calculator</h1>
+            <!--total or principal amount-->
+            Amount <input type="number" id="principal" onchange="checkAmount()">
+            <br/> Interest Rate
+            <input type="range" id="rate" min="0.0" max="10.25" step="0.25" value="10.25" onchange="updateRate(this.value)">
+            <!--rate value selector-->
+            <span id="rate_val">10.25%</span>
 
-        <button onclick="compute()">Compute</button>
-    </body>
+            <!--drop down for years-->
+            <br/> No. of Years
+            <select name="No. of Years" id="years"> 
+            <option value="1">1</option>
+            <!-- fill in the rest of the values-->
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            </select>
+            <br/>
+            <!--Calculate-->
+            <button onclick="compute()">Compute Interest</button>
+            <br/>
+            <span></span>
+            <br>
+            <!--result calculated from js and displayed-->
+            <p id="result"></p>
+            <!--footer who coded it-->
+            <footer>&#169; This Calculator belongs to Aasia Mahmoood</footer>
+</body>
+</div>
+</div>
+
 </html>
